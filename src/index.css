@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  background: #fffaf3;
+  color: #292524;
+  font-family: 'Rubik', Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior-y: none;
+}
+
+button {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(120vh) rotate(360deg); opacity: 0.6; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@media print {
+  body { background: #fff; }
+}
